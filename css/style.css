@@ -4,10 +4,17 @@
     box-sizing: border-box;
 }
 
-p, span, a, li, label, input {
-    font-family: "Red Hat Display", system-ui;
+h1, h2, h3 {
+    font-family: "Oswald", regular;
     font-optical-sizing: auto;
-    /*font-weight: <weight>;*/
+    font-weight:600; 
+    letter-spacing: 4px;
+}
+
+p, span, a, li, label, input {
+    font-family: "Oswald", regular;
+    font-optical-sizing: auto;
+    /*font-weight:600;*/
     font-style: normal;
 }
 
@@ -116,28 +123,46 @@ header {
 }
 
 /*home*/
-.titulo-novedades  {
-    background: url("../imgs/fondo-titulo.png") no-repeat ;
+.titulo-novedades, .titulo-galeria  {
+    /*background: url("../imgs/fondo-títulos.png") no-repeat ;*/
+    background: url("../imgs/fondo-titulos.png");
     position: relative;
     width: 276px;
     height: 117px;
-    margin: 20px 0;
+    margin: 20px 0 0 20px;
 }
 
-.titulo-novedades h2 {
+.titulo-novedades h2, .titulo-galeria h2 {
     position: absolute;
-    top: 45%;
-    left: 25%;
+    top: 37%;
+    left: 24%;
     color: #9F202E;
     font-size: 27px;
 }
 
-#novedades, #tienda {
+/*galeria*/
+.galeria {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    padding: 12px;
+}
+
+.galeria a {
+    width: 48%;
+}
+
+.galeria a img {
+    width: 100%;
+}
+
+#novedades, #tienda #galeria{
     padding: 12px;
 }
 
 .producto {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Sombra */
+    
     padding: 10px 20px;
     text-align: center;
     /*width: 49%;*/
@@ -236,8 +261,10 @@ header {
 
 /*Nosotros*/
 #fondo-nosotros {
-    background: url("../imgs/fondonosotros.png") no-repeat center center;
+    background: url("../imgs/fondonosotros.png") no-repeat center;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: top center;
 
 }
 
@@ -432,6 +459,10 @@ header {
 
     }
 
+    .galeria a {
+        width: 24%;
+    }
+
     .footer {
         display: flex;
         justify-content: space-between;
@@ -453,7 +484,9 @@ header {
 
 @media only screen and (min-width: 1200px) {
     #novedades,
-    #tienda, #nosotros,
+    #tienda,
+    #nosotros,
+    #galeria,
     .footer {
         width: 1200px;
         margin: auto;
